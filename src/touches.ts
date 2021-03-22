@@ -64,7 +64,7 @@ export class Touches {
             listeners = Object.assign(listeners, this.otherListeners);
         }
 
-        for (var listener in listeners) {
+        for (const listener in listeners) {
             const handler: MouseHandler = listeners[listener];
 
             // Window
@@ -190,7 +190,7 @@ export class Touches {
 
     handleMousemove = (event: any) => {
         //event.preventDefault();
-        
+
         if (!this.isMousedown) {
             return;
         }
@@ -367,8 +367,8 @@ export class Touches {
     }
 
     detectTouchScreen() {
-        var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
-        var mq = function(query: any) {
+        const prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
+        const mq = function(query: any) {
             return window.matchMedia(query).matches;
         }
 
@@ -378,10 +378,9 @@ export class Touches {
 
         // include the 'heartz' as a way to have a non matching MQ to help terminate the join
         // https://git.io/vznFH
-        var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
+        const query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
         return mq(query);
     }
-
 
     /* Public properties and methods */
     on(event: EventType, handler: Function) {
