@@ -17,9 +17,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { IvyPinch } from './ivypinch'; 
 
-import PinchZoom from './components/PinchZoom.vue'; 
+import PinchZoom from './components/PinchZoom.vue';
 
 @Component({
     components: {
